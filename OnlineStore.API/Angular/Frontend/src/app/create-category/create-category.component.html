@@ -1,0 +1,15 @@
+
+<div class="content">
+<mat-card>
+  <form class="form">
+      <mat-form-field class="input-full-width">
+        <input matInput placeholder="Category Name" [(ngModel)]="category.name" name="name">
+      </mat-form-field>
+      <mat-form-field class="input-full-width">
+          <input matInput placeholder="Category Description" [(ngModel)]="category.description" name="description">
+      </mat-form-field>
+      <button mat-raised-button (click)="createCategory()">Create Category</button>
+  </form>
+
+</mat-card>
+</div>

@@ -1,4 +1,7 @@
-﻿using OnlineStore.DAL.Context;
+﻿using System.Collections.Generic;
+using System.Linq;
+using OnlineStore.DAL.Context;
+using OnlineStore.DAL.Entities;
 
 namespace OnlineStore.DAL.Repository
 {
@@ -9,6 +12,21 @@ namespace OnlineStore.DAL.Repository
         public StoreRepository(StoreContext context)
         {
             this.context = context;
+        }
+
+        public void AddCategory(Category entity)
+        {
+            context.Categories.Add(entity);
+        }
+
+        public IEnumerable<Category> GetCategories()
+        {
+            return context.Categories.ToList();
+        }
+
+        public void Save()
+        {
+            context.SaveChanges();
         }
     }
 }

@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OnlineStore.API.Models;
 using OnlineStore.DAL.Context;
+using OnlineStore.DAL.Entities;
 using OnlineStore.DAL.Repository;
 
 namespace OnlineStore.API
@@ -37,6 +39,13 @@ namespace OnlineStore.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            AutoMapper.Mapper.Initialize(config =>
+            {
+                config.CreateMap<Category, CategoryDto>();
+                config.CreateMap<CategoryForCreationDto, Category>();
+
+            });
 
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
 
