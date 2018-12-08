@@ -24,6 +24,11 @@ namespace OnlineStore.DAL.Repository
             return context.Categories.ToList();
         }
 
+        public IEnumerable<Product> GetProducts()
+        {
+            return context.Products.ToList();
+        }
+
         public void Save()
         {
             context.SaveChanges();

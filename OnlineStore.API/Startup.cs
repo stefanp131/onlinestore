@@ -44,6 +44,8 @@ namespace OnlineStore.API
             {
                 config.CreateMap<Category, CategoryDto>();
                 config.CreateMap<CategoryForCreationDto, Category>();
+                config.CreateMap<Product, ProductDto>();
+                config.CreateMap<ProductForCreationDto, Product>();
 
             });
 

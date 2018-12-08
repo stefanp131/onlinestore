@@ -8,5 +8,6 @@ namespace OnlineStore.DAL.Repository
         IEnumerable<Category> GetCategories();
         void AddCategory(Category entity);
         void Save();
+        IEnumerable<Product> GetProducts();
     }
 }
